@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather - Kisan Setu</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+
+<body class="container">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌾 KISSAN SETU</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="weather.html" class="active">Weather</a>
+      <a href="rate.html">Mandi Rate</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  
+  <!-- 🌍 Translator -->
+  <div id="google_translate_element" class="translator-box"></div>
+
+  <!-- Hero Section -->
+  <section class="content">
+    <h1>🌦 Detailed Weather Forecast</h1>
+    <p>Check temperature, wind, humidity, UV index & visibility for your city.</p>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="searchCity()">Search</button>
+    </div>
+  </section>
+
+  <!-- Weather Info -->
+  <main class="weather-details">
+    <h2 id="city-name">Bhopal</h2>
+    <p id="update-time">Last updated: --</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌡 Temperature</h3>
+        <p id="temp">-- °C</p>
+      </div>
+
+      <div class="card">
+        <h3>💧 Humidity</h3>
+        <p id="humidity">-- %</p>
+      </div>
+
+      <div class="card">
+        <h3>🌬 Wind</h3>
+        <p id="wind">-- km/h NE</p>
+      </div>
+
+      <div class="card">
+        <h3>☀️ UV Index</h3>
+        <p id="uv">--</p>
+      </div>
+
+      <div class="card">
+        <h3>👁️ Visibility</h3>
+        <p id="visibility">-- km</p>
+      </div>
+
+      <div class="card">
+        <h3>⏱ Air Pressure</h3>
+        <p id="pressure">-- hPa</p>
+      </div>
+    </div>
+
+    <h2>🕒 Hourly Forecast (Next 6 Hours)</h2>
+    <div id="hourly-forecast" class="hourly-grid">
+      <p>Loading...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 KISSAN SETU | Empowering Indian Farmers 🌾</p>
+  </footer>
+
+   <!-- 🌐 Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr,ta,te,gu,kn,bn,pa',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+  <script>
+    const apiKey = "gG0AuSiVeRPcFHmOmsEUaQMCXmnapTpc";
+
+    async function fetchWeather(city = "Bhopal") {
+      try {
+        const url = `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const current = data.timelines.minutely[0].values;
+        const hourly = data.timelines.hourly.slice(0, 6);
+
+        document.getElementById("city-name").innerText = city;
+        document.getElementById("update-time").innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+        document.getElementById("temp").innerText = `${current.temperature.toFixed(1)} °C`;
+        document.getElementById("humidity").innerText = `${current.humidity}%`;
+        document.getElementById("wind").innerText = `${current.windSpeed.toFixed(1)} km/h ${getWindDirection(current.windDirection)}`;
+        document.getElementById("uv").innerText = `${current.uvIndex}`;
+        document.getElementById("visibility").innerText = `${(current.visibility / 1000).toFixed(1)} km`;
+        document.getElementById("pressure").innerText = `${current.pressureSurfaceLevel.toFixed(1)} hPa`;
+
+        // Hourly Forecast
+        const hourlyContainer = document.getElementById("hourly-forecast");
+        hourlyContainer.innerHTML = "";
+        hourly.forEach(h => {
+          const time = new Date(h.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          const temp = `${h.values.temperature.toFixed(1)}°C`;
+          const humidity = `${h.values.humidity}%`;
+          const icon = getWeatherIcon(h.values.weatherCodeFullDay);
+
+          const card = document.createElement("div");
+          card.className = "hour-card";
+          card.innerHTML = `<h4>${time}</h4><p>${icon}</p><p>${temp}</p><p>💧${humidity}</p>`;
+          hourlyContainer.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+        document.getElementById("city-name").innerText = "⚠️ Unable to load data";
+      }
+    }
+
+    function getWindDirection(deg) {
+      const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+      return directions[Math.round(deg / 45) % 8];
+    }
+
+    function getWeatherIcon(desc) {
+      if (!desc) return "❓";
+      if (desc.includes("Clear")) return "☀️";
+      if (desc.includes("Cloud")) return "⛅";
+      if (desc.includes("Rain")) return "🌧️";
+      if (desc.includes("Thunder")) return "⛈️";
+      if (desc.includes("Snow")) return "❄️";
+      return "🌤️";
+    }
+
+    function searchCity() {
+      const city = document.getElementById("cityInput").value.trim();
+      if (city) fetchWeather(city);
+      else alert("Please enter a city name!");
+    }
+
+    fetchWeather(); // Default: Bhopal
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | KISSAN SETU</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body class="container">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌾 KISSAN SETU</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="weather.html">Weather</a>
+      <a href="rate.html">Mandi Rate</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- 🌍 Translator -->
+  <div id="google_translate_element" class="translator-box"></div>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h1>📞 Contact Us</h1>
+    <p>We’d love to hear from you! Whether you’re a farmer, entrepreneur, or student — let’s stay connected.</p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+        <label for="name">👤 Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">📧 Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">💬 Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>📍 Our Office</h2>
+        <p><strong>Address:</strong> Kissan setu office , Bhopal, Madhya Pradesh, India</p>
+        <p><strong>Phone:</strong> +91 74897 84012</p>
+        <p><strong>Email:</strong> support@kissansetunetwork.in</p>
+
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#">🌐 Website</a>
+          <a href="#">📘 Facebook</a>
+          <a href="#">📸 Instagram</a>
+          <a href="#">🐦 Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 KISSAN SETU | Empowering Indian Farmers 🌾</p>
+  </footer>
+
+   <!-- 🌐 Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr,ta,te,gu,kn,bn,pa',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+  <script src="contact.js"></script>
+</body>
+</html>

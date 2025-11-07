@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.container {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #f4f9f4;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 12px 12px 0 0;
+}
+
+/* 🌾 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  padding: 15px 25px;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+/* Hero Section */
+.content {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(120deg, #c8e6c9, #f1f8e9);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  margin-left: 10px;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #1b5e20;
+}
+
+/* Weather Details */
+.weather-details {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin: 20px 10px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+/* Hourly Forecast */
+.hourly-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.hour-card {
+  background: #e8f5e9;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hour-card h4 {
+  font-size: 14px;
+  color: #2e7d32;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌍 Translator Styling */
+.translator-box {
+  text-align: right;
+  margin: 10px 30px;
+}
+
+.goog-te-gadget {
+  font-size: 14px !important;
+  color: #2e7d32;
+}
+
+.goog-te-combo {
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget span {
+  display: none;
+}

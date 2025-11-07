@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kisan Setu - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌾 KISSAN SETU</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="weather.html">Weather</a>
+      <a href="rate.html">Mandi Rate</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- 🌍 Translator -->
+  <div id="google_translate_element" class="translator-box"></div>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="login-card">
+      <h2>👨‍🌾 Farmer Login</h2>
+      <p>Access your personalized dashboard</p>
+
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p class="register-link">
+          Don’t have an account? <a href="register.html">Register here</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Kisan Setu. All rights reserved.</p>
+  </footer>
+
+  <!-- 🌐 Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr,ta,te,gu,kn,bn,pa',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Dummy login logic (you can replace this with Firebase / backend auth)
+      if (email === "ashishnayma0@gmail.com" && password === "Ashu@009") {
+        alert("✅ Login successful!");
+        window.location.href = "home.html";
+      } else {
+        alert("❌ Invalid credentials! Try again.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Schemes | KISSAN SETU</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="scheme.css">
+</head>
+
+<body class="container">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌾 KISSAN SETU</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="scheme.html" class="active">Scheme</a>
+      <a href="weather.html">Weather</a>
+      <a href="rate.html">Mandi Rate</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  <!-- 🌍 Translator -->
+  <div id="google_translate_element" class="translator-box"></div>
+
+  <!-- Page Title -->
+  <div class="scheme-header">
+    <h1>Government Agriculture Schemes in India 🇮🇳</h1>
+    <p>Explore various schemes that empower farmers with financial, technical, and infrastructural support.</p>
+
+    <input type="text" id="searchBox" placeholder="🔍 Search Scheme by Name..." onkeyup="filterSchemes()">
+  </div>
+
+  <!-- Scheme Cards Container -->
+  <section id="schemeList" class="scheme-container">
+    <p class="loading">Loading schemes...</p>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2024 KISSAN SETU | Empowering Indian Farmers 🌾</p>
+  </div>
+   <!-- 🌐 Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr,ta,te,gu,kn,bn,pa',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+  <script src="scheme.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body.container {
+font-family: "Poppins", Arial, sans-serif;
+background: #f4f9f4;
+color: #333;
+line-height: 1.6;
+border-radius: 12px 12px 0 0;
+}
+
+/* 🌾 Navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(90deg, #2e7d32, #4caf50);
+padding: 15px 25px;
+color: #fff;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+flex-wrap: wrap;
+}
+
+.navbar .logo {
+font-size: 1.4rem;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+.navbar nav a {
+color: white;
+margin-left: 15px;
+text-decoration: none;
+font-weight: 600;
+transition: 0.3s;
+padding: 8px 12px;
+border-radius: 6px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+background: rgba(255, 255, 255, 0.2);
+}
+
+/* Rate Section */
+.rate-section {
+text-align: center; padding: 40px 20px;
+}
+.rate-section h1 { color: #1b5e20; font-size: 2rem; margin-bottom: 10px; }
+.rate-section p { margin-bottom: 30px; font-size: 1.1rem; }
+
+/* Filters */
+.filters {
+display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 30px;
+}
+.filters select, .filters button {
+padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc;
+}
+.filters button {
+background: #2e7d32; color: white; border: none; cursor: pointer;
+}
+.filters button:hover {
+background: #1b5e20;
+}
+
+/* Rate Result */
+.rateResult {
+max-width: 900px; margin: auto; padding: 20px; background: white;
+border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.rateResult table {
+width: 100%; border-collapse: collapse;
+}
+.rateResult th, .rateResult td {
+padding: 12px; border-bottom: 1px solid #eee; text-align: left;
+}
+.rateResult th {
+background: #e8f5e9; color: #1b5e20;
+}
+.rateResult td {
+font-size: 14px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+background: linear-gradient(90deg, #2e7d32, #4caf50);
+color: white;
+padding: 20px;
+font-size: 15px;
+border-radius: 0 0 12px 12px;
+box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Add below existing styles */
+.topCommodities {
+max-width: 900px;
+margin: 30px auto;
+padding: 20px;
+background: white;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.topCommodities table {
+width: 100%;
+border-collapse: collapse;
+}
+.topCommodities th, .topCommodities td {
+padding: 12px;
+border-bottom: 1px solid #eee;
+}
+.topCommodities th {
+background: #e8f5e9;
+color: #1b5e20;
+text-align: left;
+}
+
+.priceTrend {
+max-width: 900px;
+margin: 30px auto 60px auto;
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* 🌍 Translator Styling */
+.translator-box {
+text-align: right;
+margin: 10px 30px;
+}
+
+.goog-te-gadget {
+font-size: 14px !important;
+color: #2e7d32;
+}
+
+.goog-te-combo {
+border: 1px solid #4caf50;
+border-radius: 5px;
+padding: 5px 8px;
+background-color: #e8f5e9;
+color: #2e7d32;
+cursor: pointer;
+font-weight: 600;
+}
+
+.goog-logo-link {
+display: none !important;
+}
+
+.goog-te-gadget span {
+display: none;
+}
+/* 🌿 Responsive Design (Media Queries) */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters select,
+  .filters button {
+    width: 100%;
+  }
+
+  .rate-section h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .topCommodities table {
+    font-size: 0.9rem;
+  }
+
+  .rateResult th,
+  .topCommodities th,
+  .rateResult td,
+  .topCommodities td {
+    padding: 8px;
+  }
+
+  .priceTrend canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  .rate-section {
+    padding: 20px 10px;
+  }
+
+  .rate-section h1 {
+    font-size: 1.4rem;
+  }
+
+  .rateResult,
+  .topCommodities,
+  .priceTrend {
+    padding: 15px;
+  }
+
+  .filters select,
+  .filters button {
+    font-size: 14px;
+  }
+}

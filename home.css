@@ -1,0 +1,219 @@
+
+
+/* Hero Section */
+.hero {
+  background: url('farm-bg.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+  background-blend-mode: overlay;
+  background-color: rgba(46, 125, 50, 0.6);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero span {
+  color: #f1f8e9;
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.container {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #f4f9f4;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 12px 12px 0 0;
+}
+
+/* 🌾 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  padding: 15px 25px;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background: #1b5e20;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: #43a047;
+  transform: translateY(-2px);
+}
+
+/* Featured Section */
+.featured {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.featured h2 {
+  color: #1b5e20;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.featured p {
+  margin-bottom: 40px;
+  color: #444;
+}
+
+/* Farmer Cards */
+.farmer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.farmer-card {
+  background: #f1f8e9;
+  width: 300px;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.farmer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(46,125,50,0.3);
+}
+
+.farmer-card h3 {
+  color: #9a6a6a;
+  margin-bottom: 10px;
+}
+
+.farmer-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#f1 {
+  background-image: url('Farmer1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#f2 {
+  background-image: url('Farmer2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#f3 {
+  background-image: url('Farmer3.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.read-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.read-btn:hover {
+  background: #1b5e20;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero {
+  background-image: url('header.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+/* 🌍 Translator Styling */
+.translator-box {
+  text-align: right;
+  margin: 10px 30px;
+}
+
+.goog-te-gadget {
+  font-size: 14px !important;
+  color: #2e7d32;
+}
+
+.goog-te-combo {
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget span {
+  display: none;
+}

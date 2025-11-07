@@ -1,0 +1,118 @@
+.scheme-header {
+  text-align: center;
+  padding: 30px 20px;
+  background: #e8f5e9;
+  border-bottom: 2px solid #2e7d32;
+}
+
+.scheme-header h1 {
+  color: #1b5e20;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.scheme-header p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+#searchBox {
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #2e7d32;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+#searchBox:focus {
+  box-shadow: 0 0 10px rgba(46, 125, 50, 0.4);
+}
+
+.scheme-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.scheme-card {
+  background: #f9fff9;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.scheme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+}
+
+.scheme-card h3 {
+  color: #2e7d32;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.scheme-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.scheme-card a {
+  background: #2e7d32;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.scheme-card a:hover {
+  background: #1b5e20;
+}
+
+.loading {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+}
+/* 🌍 Translator Styling */
+.translator-box {
+  text-align: right;
+  margin: 10px 30px;
+}
+
+.goog-te-gadget {
+  font-size: 14px !important;
+  color: #2e7d32;
+}
+
+.goog-te-combo {
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget span {
+  display: none;
+}

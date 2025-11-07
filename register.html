@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kisan Setu - Register</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🌾 KISSAN SETU</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="weather.html">Weather</a>
+      <a href="rate.html">Mandi Rate</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  <!-- 🌍 Translator -->
+  <div id="google_translate_element" class="translator-box"></div>
+
+  <!-- Register Section -->
+  <section class="register-section">
+    <div class="register-card">
+      <h2>🧑‍🌾 Create Farmer Account</h2>
+      <p>Join Kisan Setu to access personalized weather & crop info</p>
+
+      <form id="registerForm" onsubmit="return handleRegister(event)">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create password" required>
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <p class="login-link">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Kisan Setu. All rights reserved.</p>
+  </footer>
+
+  <!-- 🌐 Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr,ta,te,gu,kn,bn,pa',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" 
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+  <!-- Register Form Script -->
+
+  <script>
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      if (password !== confirmPassword) {
+        alert("❌ Passwords do not match!");
+        return;
+      }
+
+      // You can connect this to Firebase / API later
+      alert(`✅ Welcome, ${name}! Your account has been created.`);
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+
+</html>
